@@ -1,6 +1,8 @@
 const express = require('express')
 const hbs = require('hbs')
 
+const port = process.env.PORT || 3000
+
 const app = express()
 
 app.use(express.static(__dirname + '/public'))
@@ -33,6 +35,6 @@ app.get('/help', (req, res) => {
     res.render('help.html')
 })
 
-app.listen(3000, () => {
-    console.log('Server started');
+app.listen(port, () => {
+    console.log(`Server started in port: ${port}`);
 })
